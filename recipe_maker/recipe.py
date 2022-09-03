@@ -4,23 +4,27 @@ from urllib.request import urlopen
 def search(recipes, ingredients):
     matches = []
     for recipe in recipes:
-        ingredient_matches = 0
         for ingredient in ingredients:
             if ingredient in recipe.ingredients:
-                ingredient_matches += 1
+                recipe.matches += 1
 
-        matches.append((recipe, ingredient_matches))
+        matches.append(recipe)
 
-    matches.sort(key=lambda tup: tup[1])
+    matches.sort(key=lambda lol: lol.matches, reverse=True)
+    for i, match in enumerate(matches):
+        if i > 4:
+            break
+        match.request()
     return matches[:5]
 
 
 class Recipe:
-    def __init__(self, name: str, ingredients: list, link: str):
+    def __init__(self, name: str, ingredients: str, link: str):
         self.name = name
-        self.ingredients = ingredients
+        self.ingredients = eval(ingredients)
         self.link = link
         self.html = ''
+        self.matches = 0
 
     def request(self):
         self.html = urlopen(self.link).read()

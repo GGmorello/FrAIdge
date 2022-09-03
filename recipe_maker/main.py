@@ -1,8 +1,9 @@
 import csv
-from recipe import Recipe
+from recipe import Recipe, search
 from fastapi import FastAPI
 import uvicorn
 import redis
+import pickle
 
 app = FastAPI()
 redis = redis.Redis(
@@ -13,21 +14,23 @@ redis = redis.Redis(
 @app.on_event('startup')
 async def startup_event():
     datafile = 'Recipes.csv'
-    dataset = csv.reader(datafile, delimiter=',')
-    next(dataset)
+    f = open(datafile, 'r')
+    dataset = csv.reader(f, delimiter=',')
+    e = next(dataset)
     recipes = []
-    for count, row in enumerate(dataset):
+    for row in dataset:
         recipes.append(Recipe(row[0], row[2], row[1]))
-    redis.set('recipes', repr(recipes))
+    pickled_recipes = pickle.dumps(recipes)
+
+    redis.set('recipes', pickled_recipes)
 
 
 @app.get("/")
 async def root(ingredients):
-    recipes = eval(redis.get('recipes'))
-    search()
-    return {"message": "Hello World"}
+    list_ingredients = eval(ingredients)
+    recipes = pickle.loads(redis.get('recipes'))
+    return search(recipes, list_ingredients)
 
 if __name__ == "__main__":
-    main()
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
