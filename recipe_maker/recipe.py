@@ -37,3 +37,5 @@ class Recipe:
             if type(recommendation[self.name]) is None:
                 return 0
             return recommendation[self.name]
+        else:
+            return 0
