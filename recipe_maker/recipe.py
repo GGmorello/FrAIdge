@@ -1,4 +1,3 @@
-from urllib.request import urlopen
 import pandas as pd
 
 def search(recipes, ingredients, userId):
@@ -8,12 +7,11 @@ def search(recipes, ingredients, userId):
             if ingredient in recipe.ingredients:
                 recipe.matches += 1
 
+        recipe.missing_ingredients = [item for item in recipe.ingredients if item not in ingredients]
         matches.append(recipe)
+
     matches.sort(key=lambda lol: lol.matches, reverse=True)
     matches.sort(key=lambda lol: len(lol.ingredients) - lol.matches)
-    for i, match in enumerate(matches):
-        if i > 4:
-            break
 
     head = matches[:5]
     print(head)
@@ -28,6 +26,8 @@ class Recipe:
         self.ingredients = eval(ingredients)
         self.link = link
         self.matches = 0
+        self.similarity_with_other_recipes = []
+        self.missing_ingredients = []
 
     def get_recommendation(self, userId):
         table = pd.read_pickle("dataframe.pkl")
