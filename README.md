@@ -4,12 +4,12 @@ Our project for the KHT AI Society Hackathon 2022
 
 ## Instructions:
 install dependencies
-`brew tap redis-stack/redis-stack \n
-brew install --cask redis-stack \n
+`brew tap redis-stack/redis-stack  
+brew install --cask redis-stack  
 redis-server`
 
-`pip3 install redis \n
-pip install fastapi[all] \n
+`pip3 install redis  
+pip install fastapi[all]  
 pip install`
 ## Collaborators:
 | Picture | Name | Email | Linked-In |
