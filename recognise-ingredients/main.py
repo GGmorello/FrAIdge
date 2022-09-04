@@ -4,6 +4,9 @@ import io
 import os
 from image_processing import *
 
+RELATIVE_PATH = 'images/fridge.jpg'
+SHOW = False
+
 # Load an instance of the image annotator
 client = vision.ImageAnnotatorClient()
 
@@ -47,15 +50,16 @@ def filterIngredients(set):
         'Container',
         'Animal',
         'Clock',
-        'Fruit'
+        'Fruit',
+        'Person'
     }
 
     return set.difference(removables)
 
 
 def main():
-    file_name = os.path.abspath('images/stjoopid.jpg')
-    objects = objectLocalization(file_name, 0.02, show=True)
+    file_name = os.path.abspath(RELATIVE_PATH)
+    objects = objectLocalization(file_name, 0.02, show=SHOW)
     # Filter ingredients
     ingredients = filterIngredients(objects)
     print(ingredients)
