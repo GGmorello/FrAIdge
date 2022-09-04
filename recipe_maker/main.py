@@ -29,8 +29,8 @@ async def startup_event():
 async def root(ingredients):
     list_ingredients = eval(ingredients)
     recipes = pickle.loads(redis.get('recipes'))
-    return search(recipes, list_ingredients)
+    return search(recipes, list_ingredients, '0')
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8001)
 
