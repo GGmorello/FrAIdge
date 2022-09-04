@@ -37,7 +37,7 @@ def upload_file():
       print('file sent')
       filename = secure_filename(file.filename)
       file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-      return redirect('/recipes')
+      return redirect('/ingredients')
       # return "success"
   
   # return send_from_directory('.', 'static/upload/index.html')
@@ -52,9 +52,6 @@ def upload_file():
     <script type='text/javascript' src="static/upload/script.js"></script>
     '''
 
-
-
-
 # # Uploads dropped image to /uploads folder (then we can access it as an image file for recognition)
 # @app.route('/upload', methods=('POST',))
 # def upload():
@@ -65,11 +62,15 @@ def upload_file():
 #   return redirect("/recipes")
 #   # return render
 
-@app.route('/recipes', methods=['GET', 'POST'])
-def show_recipes():
-  print('showing recipes')
-  # breakpoint()
-  return send_from_directory('.', 'static/recipes/index.html')
+@app.route('/ingredients', methods=['GET', 'POST'])
+def show_ingredients():
+  
+  if request.method == 'POST':
+    fruits = request.form.getlist("fruits")
+    print(fruits)
+    return 'success'
+  else:
+    return send_from_directory('.', 'static/ingredients/index.html')
 
 
 

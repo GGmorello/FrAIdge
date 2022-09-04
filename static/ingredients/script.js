@@ -1,5 +1,5 @@
 const ul = document.querySelector("ul"),
-input = document.querySelector("input"),
+input = document.querySelector("input[name='interactive-input']"),
 tagNumb = document.querySelector(".details span");
 
 let maxTags = 10,
@@ -16,7 +16,7 @@ function countTags(){
 function createTag(){
     ul.querySelectorAll("li").forEach(li => li.remove());
     tags.slice().reverse().forEach(tag =>{
-        let liTag = `<li>${tag} <i class="uit uit-multiply" onclick="remove(this, '${tag}')"></i></li>`;
+        let liTag = `<li>${tag}<input type='hidden' name='fruits' value='${tag}'/> <i class="uit uit-multiply" onclick="remove(this, '${tag}')"></i></li>`;
         ul.insertAdjacentHTML("afterbegin", liTag);
     });
     countTags();

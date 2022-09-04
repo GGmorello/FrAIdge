@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>FrAIdge</title>
-    <link rel="stylesheet" href="static/recipes/style.css">
+    <link rel="stylesheet" href="static/ingredients/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Unicons CDN Link for Icons -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/thinline.css">
@@ -13,12 +13,18 @@
     <div class="wrapper" style="margin-top: 50px">
       <!-- The Food Block -->
       <div class="title">
-        <img src="static/recipes/tag.svg" alt="icon">
+        <img src="static/ingredients/tag.svg" alt="icon">
         <h2>You have:</h2>
       </div>
       <div class="content">
         <p>Press enter or add a comma after each tag</p>
-        <ul><input type="text" spellcheck="false"></ul>
+        
+        <!-- Form with ingredients to be submitted -->
+        <form action='/ingredients' method="post" onkeydown="return event.key != 'Enter';">
+          <ul><input type="text" spellcheck="false" name='interactive-input'></ul>
+          <input type="submit">
+        </form>
+
       </div>
       <div class="details">
         <p><span>10</span> tags are remaining</p>
@@ -29,7 +35,7 @@
 
     <div class="wrapper" onclick="openPage('google.com')" style="cursor: pointer;">
         <div class="title">
-          <img src="static/recipes/recipe.svg" alt="icon">
+          <img src="static/ingredients/recipe.svg" alt="icon">
           <h2>Classic Meatballs</h2>
         </div>
         <div class="content">
@@ -39,7 +45,7 @@
 
     <div class="wrapper">
       <div class="title">
-        <img src="static/recipes/recipe.svg" alt="icon">
+        <img src="static/ingredients/recipe.svg" alt="icon">
         <h2>Classic Meatballs</h2>
       </div>
       <div class="content">
@@ -49,7 +55,7 @@
 
   <div class="wrapper">
     <div class="title">
-      <img src="static/recipes/recipe.svg" alt="icon">
+      <img src="static/ingredients/recipe.svg" alt="icon">
       <h2>Classic Meatballs</h2>
     </div>
     <div class="content">
@@ -58,7 +64,7 @@
 </div>
   </div>
   
-    <script type='text/javascript' src="static/recipes/script.js"></script>
+    <script type='text/javascript' src="static/ingredients/script.js"></script>
     
   </body>
 </html>
