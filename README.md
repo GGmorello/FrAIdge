@@ -2,7 +2,7 @@
 
 Our project for the KHT AI Society Hackathon 2022
 
-Team members:
+Collaborators:
 | Picture | Name | Email | Linked-In |
 |---|---|---|---|
 | <img src="https://media-exp1.licdn.com/dms/image/C4D03AQEhg-OClgft5Q/profile-displayphoto-shrink_400_400/0/1620464386827?e=1668038400&v=beta&t=ZzW6b9-iyr3wqbSTDyt3grQpbP7Zyxsb70PKVn7fl0Q" width="60"/>   |  Gabriele Morello |  morello@kth.se | https://www.linkedin.com/in/gabriele-morello/ |
