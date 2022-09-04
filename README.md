@@ -23,3 +23,8 @@ pip3 install -r ./recipe_maker/requirements.txt
 | <img src="https://gitlab.ewi.tudelft.nl/uploads/-/system/user/avatar/3096/avatar.png?width=400" width="60"/> |  Gijs van de Linde | G.vandelinde@student.tudelft.nl| https://www.linkedin.com/in/gijs-van-de-linde/ |
 | <img src="https://media-exp1.licdn.com/dms/image/C4E03AQGShMhJRR8fQQ/profile-displayphoto-shrink_200_200/0/1626341455491?e=1668038400&v=beta&t=UvPar_rAbKbjJI7CT-O5hhMECieBQ__m6QSQ9CpRqq8" width="60"/> | Steffano Psathas | steffano@kth.se | https://www.linkedin.com/in/steffano-psathas/ |
 | <img src="https://media-exp1.licdn.com/dms/image/C4E03AQEH8jHAfHflsw/profile-displayphoto-shrink_400_400/0/1653482359256?e=1668038400&v=beta&t=WtRxCit6zDN6f5vQ4q-TM4drHy8W_fIBkg7nACbd8kI" width="60"/> | Jakub Monhart | monhajak@fel.cvut.cz | https://www.linkedin.com/in/jakub-monhart-a3232115b/ |
+| <img src="https://avatars.githubusercontent.com/u/73384534?s=400&u=2dde8237611ba09b034e325be734d782ac4325b3&v=4" width="60"/> | Nikita Roldugins | nikita.roldugins@icloud.com | https://www.linkedin.com/in/nikita-roldugins/ |
+
+
+
+
