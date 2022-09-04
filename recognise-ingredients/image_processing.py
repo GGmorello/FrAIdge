@@ -1,5 +1,5 @@
 from PIL import Image
-from google.cloud import vision
+#from google.cloud import vision
 import os
 import io
 
@@ -20,10 +20,12 @@ def cropImage(file_name, locations, factor, show=False):
         top = min(top, vertex.y)
         bottom = max(bottom, vertex.y)
 
-    cropped = image.crop(
-        (left * width * (1 - factor), top * height * (1 - factor),
-         right * width * (1 + factor), bottom * height * (1 + factor))
-    )
+    real_left = max(0, left * width * (1 - factor))
+    real_right = min(width, right * width * (1 + factor))
+    real_top = max(0, top * height * (1 - factor))
+    real_bottom = min(height, bottom * height * (1 + factor))
+
+    cropped = image.crop((real_left, real_top, real_right, real_bottom))
     if show:
         cropped.show()
     return cropped
