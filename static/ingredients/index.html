@@ -10,26 +10,31 @@
   </head>
   <body>
   <div class="container">
+    <!-- <img src="photo.jpg" alt="photo"> -->
     <div class="wrapper" style="margin-top: 50px">
       <!-- The Food Block -->
       <div class="title">
         <img src="static/ingredients/tag.svg" alt="icon">
         <h2>You have:</h2>
       </div>
+      <form action='/ingredients' method="post" onkeydown="return event.key != 'Enter';">
       <div class="content">
         <p>Press enter or add a comma after each tag</p>
         
         <!-- Form with ingredients to be submitted -->
-        <form action='/ingredients' method="post" onkeydown="return event.key != 'Enter';">
+        <!-- <form action='/ingredients' method="post" onkeydown="return event.key != 'Enter';"> -->
           <ul><input type="text" spellcheck="false" name='interactive-input'></ul>
-          <input type="submit">
-        </form>
+          <!-- <input type="submit"> -->
+        <!-- </form> -->
 
       </div>
       <div class="details">
         <p><span>10</span> tags are remaining</p>
-        <button>Remove All</button>
+        <!-- <input class="button" name="removeall" style="vertical-align:middle" type="submit" value="Upload"> -->
+        <button class="button" style="vertical-align:middle" type="submit" value="Upload"><span>Show recipes</span></button></center>
+        <!-- <button>Remove All</button> -->
       </div>
+    </form>
     </div>
   </div>
   

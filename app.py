@@ -4,6 +4,8 @@ from werkzeug.utils import secure_filename
 import requests
 from recognise_ingredients.main import objectLocalization, filterIngredients
 
+import shutil
+
 UPLOAD_FOLDER = 'uploads'
 SHOW = False
 
@@ -43,17 +45,17 @@ def upload_file():
       return redirect('/ingredients')
       # return "success"
   
-  # return send_from_directory('.', 'static/upload/index.html')
-  return '''
-    <!doctype html>
-    <title>Upload new File</title>
-    <h1>Upload new File</h1>
-    <form method=post enctype=multipart/form-data>
-      <input type=file name=file>
-      <input type=submit value=Upload>
-    </form>
-    <script type='text/javascript' src="static/upload/script.js"></script>
-    '''
+  return send_from_directory('.', 'static/upload/index.html')
+  # return '''
+  #   <!doctype html>
+  #   <title>Upload new File</title>
+  #   <h1>Upload new File</h1>
+  #   <form method=post enctype=multipart/form-data>
+  #     <input type=file name=file>
+  #     <input type=submit value=Upload>
+  #   </form>
+  #   <script type='text/javascript' src="static/upload/script.js"></script>
+  #   '''
 
 # # Uploads dropped image to /uploads folder (then we can access it as an image file for recognition)
 # @app.route('/upload', methods=('POST',))
@@ -106,6 +108,8 @@ def show_ingredients():
     js_file = open("static/ingredients/script.js", "w")
     js_file.writelines(list_of_lines)
     js_file.close()
+
+    shutil.copyfile('/Users/jakub/git/fraidge-backend/uploads/photo.jpg', '/Users/jakub/git/fraidge-backend/static/ingredients/photo.jpg')
     
     return send_from_directory('.', 'static/ingredients/index.html')
 
