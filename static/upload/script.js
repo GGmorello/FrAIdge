@@ -56,6 +56,21 @@ dropArea.addEventListener('drop', (event) => {
   // xhr.send(fd);
 
   file = event.dataTransfer.files[0];
+  let formData = new FormData();
+     
+  formData.append("file", file);
+  fetch('', {method: "POST", body: formData});
+
+  // const ctrl = new AbortController()    // timeout
+  //   setTimeout(() => ctrl.abort(), 5000);
+    
+  //   try {
+  //      let r = await fetch('/upload/image', 
+  //        {method: "POST", body: formData, signal: ctrl.signal}); 
+  //      console.log('HTTP response code:',r.status); 
+  //   } catch(e) {
+  //      console.log('Huston we have problem...:', e);
+    // }
   // document.getElementById("image-form").submit();
   // displayFile();
 
