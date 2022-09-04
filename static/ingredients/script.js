@@ -3,7 +3,7 @@ input = document.querySelector("input[name='interactive-input']"),
 tagNumb = document.querySelector(".details span");
 
 let maxTags = 10,
-tags =  ["Carrot", "Squash", "Apple", "Bell pepper", "Tomato", ]
+tags =  ["Apple", "Squash", "Carrot", "Bell pepper", "Tomato", ]
 
 countTags();
 createTag();
@@ -46,9 +46,9 @@ function addTag(e){
 
 input.addEventListener("keyup", addTag);
 
-const removeBtn = document.querySelector(".details button");
-removeBtn.addEventListener("click", () =>{
-    tags.length = 0;
-    ul.querySelectorAll("li").forEach(li => li.remove());
-    countTags();
-});
+// const removeBtn = document.querySelector("[name='removeall']");
+// removeBtn.addEventListener("click", () =>{
+//     tags.length = 0;
+//     ul.querySelectorAll("li").forEach(li => li.remove());
+//     countTags();
+// });

@@ -109,7 +109,7 @@ def show_ingredients():
     js_file.writelines(list_of_lines)
     js_file.close()
 
-    shutil.copyfile('/Users/jakub/git/fraidge-backend/uploads/photo.jpg', '/Users/jakub/git/fraidge-backend/static/ingredients/photo.jpg')
+    
     
     return send_from_directory('.', 'static/ingredients/index.html')
 
