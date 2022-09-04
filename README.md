@@ -4,11 +4,15 @@ Our project for the KHT AI Society Hackathon 2022
 
 ## Instructions:
 install dependencies
-```brew tap redis-stack/redis-stack  
+```
+brew tap redis-stack/redis-stack  
 brew install --cask redis-stack  
-redis-server```
+redis-server
+```
 
-```pip3 install -r ./recipe_maker/requirements.txt```  
+```
+pip3 install -r ./recipe_maker/requirements.txt
+```  
 
 ## Collaborators:
 | Picture | Name | Email | Linked-In |
